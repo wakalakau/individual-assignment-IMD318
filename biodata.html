@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main {
+            padding: 30px 10%;
+        }
+
+        h2 {
+            color: #0056b3;
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #0073e6;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .biodata-info,
+        .hobbies {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s;
+        }
+
+        .biodata-info:hover,
+        .hobbies:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .biodata-info p,
+        .hobbies ul {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        .biodata-info strong {
+            color: #0056b3;
+        }
+
+        .hobbies ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hobbies li {
+            background: linear-gradient(135deg, #0056b3, #0073e6);
+            color: white;
+            margin: 10px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            display: inline-block;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #0056b3, #00b4d8);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .image-gallery img {
+            width: 100%;
+            height: 400px;
+            /* Set uniform height */
+            object-fit: cover;
+            /* Maintain aspect ratio */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            /* Slight zoom effect on hover */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+		
+	
+
+        audio {
+            width: 40%;
+            display: block;
+            margin: 0 auto;
+        }
+
+/* Dropdown Menu Styles */
+        .dropdown {
+            position: absolute;
+            top: 20px; /* Slightly away from the top edge */
+            left: 5px; /* Slightly away from the left edge */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #0073e6;
+            color: white;
+        }
+
+        .dropbtn {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+   
+ </style>
+</head>
+<body>
+
+<audio id="background-music" autoplay loop>
+        <source src="audio/ego.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // Ensure autoplay works for modern browsers
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('background-music');
+            const playAudio = () => {
+                audio.play().catch(error => {
+                    console.log('Autoplay blocked:', error);
+                });
+            };
+
+            // Try playing audio immediately
+            playAudio();
+        });
+    </script>
+    
+
+   <header style="background: url('images/picheader1.jpg') no-repeat center center/cover; height:30vh;">
+    <div class="header-content">
+        <h1> Welcome To Kamil's Website </h1>
+    </div>
+</header>
+
+    <nav>
+        <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+        
+        <a href="index.html">Home</a>
+        <a href="biodata.html">Biodata</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="family.html">Family</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+
+    </div>
+    </nav>
+    <main>
+		
+        <h2>Personal Information</h2>
+        <div class="biodata-info">
+            <p><strong>Name:</strong> Wan Ahmad Kamil Bin Wan Mahadi</p>
+            <p><strong>Nickname:</strong> Wak, Kamil</p>
+            <p><strong>Date of Birth:</strong> May 2nd 2004</p>
+            <p><strong>Email:</strong> <a href="wanahmadkamil02@gmail.com"> wanahmadkamil02@gmail.com</a></p>
+            <p><strong>Phone Number:</strong> 018-289 2359</p>
+        </div>
+
+        <h2>Gallery</h2>
+        <div class="image-gallery">
+            <img src="images/picbiodata1.jpg" alt="Gallery Image 1">
+            <img src="images/picbiodata2.jpg" alt="Gallery Image 2">
+           
+        </div>
+
+
+        <h2>Hobbies</h2>
+        <div class="hobbies">
+            <ul>
+                <li>Playing snooker</li>
+                <li>Listen to rock music</li>
+                <li>Playing mobile games</li>
+                <li>Playing Guitar</li>
+                <li>Watching action movie</li>
+                <li>Photography</li>
+                
+            </ul>
+        </div>
+
+            </main>
+    <audio autoplay controls>
+        <source src="audio/sentuhan.mp3" type="audio/mpeg">
+    </audio>
+    <footer>
+    
+
+
+        <p>&copy; 2024 Wan Ahmad Kamil | <a href="index.html">Home</a> | <a href="contact.html">Contact Me</a></p>
+    </footer>
+</body>
+</html>

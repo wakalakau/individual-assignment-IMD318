@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        main {
+            padding: 30px 10%;
+        }
+
+        h2 {
+            color: #0056b3;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            position: relative;
+            text-align: center;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #0073e6;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .about-project,
+        .testimonials {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .about-project p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        
+        .about-project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #0056b3, #00b4d8);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        marquee {
+            font-size: 1.2em;
+            color: #0056b3;
+            font-weight: bold;
+            padding: 10px;
+            background: #f9f9ff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            animation: fadeInDown 1s;
+        }
+
+        audio {
+            width: 40%;
+            display: block;
+            margin: 0 auto;
+        }
+       
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: absolute;
+            top: 20px; /* Slightly away from the top edge */
+            left: 5px; /* Slightly away from the left edge */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: black;
+            min-width: 160px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #0073e6;
+            color: white;
+        }
+
+        .dropbtn {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>    
+
+<!-- Hidden autoplay audio -->
+    <audio id="background-music" autoplay loop>
+        <source src="audio/ego.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+
+
+       <header style="background: url(images/picheader1.jpg) no-repeat center center/cover; height:30vh;">
+    <div class="header-content">
+        <h1> Welcome To Kamil's Website </h1>
+    </div>
+</header>
+    <nav>
+        <div class="dropdown">
+            <button class="dropbtn">Menu</button>
+            <div class="dropdown-content">
+                <a href="index.html">Home</a>
+                <a href="biodata.html">Biodata</a>
+                <a href="experience.html">Experience</a>
+                <a href="education.html">Education</a>
+                <a href="family.html">Family</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <marquee behavior="scroll" direction="left" scrollamount="6">
+            Welcome to My Personal Website! 
+        </marquee>
+        <h2>About This Project</h2>
+        <div class="about-project">
+            <p>"Hey there! Welcome to my little corner of the internet – a place where I share my work, ideas, and everything in between. Take a look around, explore my projects, and get to know what I’m all about. Let’s create, learn, and grow together!"</p>
+            <p>Explore the different sections to learn more about my academic projects, internship experience, skills,
+                and passions.</p>
+        </div>
+   
+ </main>
+
+       <footer>
+        <p>&copy; 2024 Wan Ahmad Kamil | <a href="index.html">Home</a> | <a href="contact.html">Contact Me</a></p>
+    </footer>
+
+<script>
+        // Ensure autoplay works across browsers
+        document.addEventListener('DOMContentLoaded', () => {
+            const audio = document.getElementById('background-music');
+            const playAudio = () => {
+                audio.play().catch(error => {
+                    console.log('Autoplay blocked:', error);
+                });
+            };
+
+            playAudio();
+
+            // Additional click interaction to resume audio if blocked
+            document.body.addEventListener('click', playAudio, { once: true });
+        });
+    </script>
+</body>
+</html>
