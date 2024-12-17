@@ -184,24 +184,6 @@
 </head>
 <body>
 
-<audio id="background-music" autoplay loop>
-        <source src="audio/ego.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <script>
-        // Ensure autoplay works for modern browsers
-        document.addEventListener('DOMContentLoaded', () => {
-            const audio = document.getElementById('background-music');
-            const playAudio = () => {
-                audio.play().catch(error => {
-                    console.log('Autoplay blocked:', error);
-                });
-            };
-
-            // Try playing audio immediately
-            playAudio();
-        });
-    </script>
     
 
    <header style="background: url('images/picheader1.jpg') no-repeat center center/cover; height:30vh;">
